@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import s from './App.module.css'
-import { api } from '../api/api'
-import { Card } from '../components/card'
+import { api } from './api/api'
+import { Card } from './components/card'
 
 function App() {
   const [data, setData] = useState([])
@@ -10,7 +10,8 @@ function App() {
 
   useEffect(() =>{
     api.get(`/characters/?name=${searchName}&page=${searchPage}`).then((response) => {
-      setData(response.data.item)
+      setData(response.data.items)
+      console.log(response.data.items)
     }).catch((error) => {
       console.error("ERRO AO PROCURAR API", error)
     })
