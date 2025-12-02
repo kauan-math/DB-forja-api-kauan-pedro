@@ -1,5 +1,5 @@
 import axios from "axios"
 
 export const api =  axios.create({
-    baseURL: "https://www.demonslayer-api.com/api/v1"
+    baseURL: "https://dragonball-api.com/api"
 })
